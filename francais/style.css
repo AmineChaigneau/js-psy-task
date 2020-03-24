@@ -1,0 +1,32 @@
+.keyboard-container-stim {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.keyboard-stim {
+    width: 150px;
+    background-color: #eaeaea;
+	border: 1px solid #afafaf;
+    padding: 20px;
+    margin: 10px;
+}
+
+.keyboard-stim {
+    width: 150px;
+    background-color: #eaeaea;
+	border: 1px solid #afafaf;
+    padding: 20px;
+    margin: 10px;
+}
+
+.keyboard-container-choice {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
