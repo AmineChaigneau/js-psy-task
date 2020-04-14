@@ -120,15 +120,18 @@ jsPsych.plugins['survey-text'] = (function() {
       var autofocus = i == 0 ? "autofocus" : "";
       var req = question.required ? "required" : "";
       if(question.rows == 1){
-        html += '<input type="text" id="input-'+question_index+'"  name="#jspsych-survey-text-response-' + question_index + '" data-name="'+question.name+'" size="'+question.columns+'" '+autofocus+' '+req+' placeholder="'+question.placeholder+'"></input>';
+        // html += '<input type="text" id="input-'+question_index+'"  name="#jspsych-survey-text-response-' + question_index + '" data-name="'+question.name+'" size="'+question.columns+'" '+autofocus+' '+req+' placeholder="'+question.placeholder+'" required></input>';
+        html += '<div class="jspsych-text-input"><input type="text" id="input-'+question_index+'"  name="#jspsych-survey-text-response-' + question_index + '" data-name="'+question.name+'" size="'+question.columns+'" '+req+' placeholder="'+question.placeholder+'" required></input></div>';
       } else {
-        html += '<textarea id="input-'+question_index+'" name="#jspsych-survey-text-response-' + question_index + '" data-name="'+question.name+'" cols="' + question.columns + '" rows="' + question.rows + '" '+autofocus+' '+req+' placeholder="'+question.placeholder+'"></textarea>';
+        html += '<textarea id="input-'+question_index+'" name="#jspsych-survey-text-response-' + question_index + '" data-name="'+question.name+'" cols="' + question.columns + '" rows="' + question.rows + '" '+req+' placeholder="'+question.placeholder+'" required></textarea>';
       }
       html += '</div>';
     }
 
     // add submit button
-    html += '<input type="submit" id="jspsych-survey-text-next" class="jspsych-btn jspsych-survey-text" value="'+trial.button_label+'"></input>';
+    // html += '<input type="submit" id="jspsych-survey-text-next" class="jspsych-btn jspsych-survey-text" value="'+trial.button_label+'"></input>';
+    // html += '<input type="submit" id="jspsych-survey-text-next" class="jspsych-btn" value="'+trial.button_label+'"></input>';
+    html += '<div class="jspsych-btn-input"><input type="submit" id="jspsych-survey-text-next" class="btn-apperance" value="'+trial.button_label+'"></input></div>';
 
     html += '</form>'
     display_element.innerHTML = html;
@@ -160,7 +163,7 @@ jsPsych.plugins['survey-text'] = (function() {
       // save data
       var trialdata = {
         "rt": response_time,
-        "responses": JSON.stringify(question_data)
+        "responses": JSON.stringify(question_data),
       };
 
       display_element.innerHTML = '';

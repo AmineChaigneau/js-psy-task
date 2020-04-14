@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Expérimentation</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Expérimentation-fr-loc</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="jsPsych-master/jspsych.js"></script>
     <script src="experimentText.js"></script>
     <script src="math.js"></script>
     <script src="choice_list.js"></script>
     <script src="choice_task.js"></script>
+    <script src="form_task.js"></script>
 
     <script src="jsPsych-master/plugins/jspsych-html-keyboard-response.js"></script>
     <script src="jsPsych-master/plugins/jspsych-keyboard-stim.js"></script>
     <script src="jsPsych-master/plugins/jspsych-keyboard-choice.js"></script>
-    <script src ="jsPsych-master/plugins/jspsych-fullscreen.js"></script>
+    <script src="jsPsych-master/plugins/jspsych-fullscreen.js"></script>
     <script src="jsPsych-master/plugins/jspsych-external-html.js"></script>
+    <script src="jsPsych-master/plugins/jspsych-button-choice.js"></script>
+    <script src="jsPsych-master/plugins/jspsych-html-button-response.js"></script>
+
+    <!-- Form -->
+    <script src='jsPsych-master/plugins/jspsych-instructions.js'></script>
+    <script src='jsPsych-master/plugins/jspsych-survey-html-form.js'></script>
+    <script src='jsPsych-master/plugins/jspsych-survey-multi-select.js'></script>
+    <script src='jsPsych-master/plugins/jspsych-survey-text.js'></script>
+    <script src='jsPsych-master/plugins/jspsych-survey-likert.js'></script>
+    <script src='panas.js'></script>
 
     <link href="jsPsych-master/css/jspsych.css" rel="stylesheet" type="text/css"></link>
     <link href="style.css" rel="stylesheet" type="text/css"></link>
@@ -24,69 +35,121 @@
     // Creation de la timeline
     var timeline = [];
 
-    // Instructions
-    var fullscreen = {
-      type: 'fullscreen',
-      fullscreen_mode: true,
-      message: 'Pour participer, votre fenêtre doit être en plein écran. Sortir du mode plein écran mettra l’expérience en pause. <br></br>Cliquez sur le bouton ci-dessous pour passer en mode plein écran et continuer.<br></br>',
-      button_label: 'Continuer',
-      data: { trialtype: 'instr', label: 'fullscreen', block_nb: 0 },
-    };
+    // Fullscreen
+    // var fullscreen = {
+    //   type: 'fullscreen',
+    //   fullscreen_mode: true,
+    //   message: 'Pour participer, votre fenêtre doit être en plein écran. Sortir du mode plein écran mettra l’expérience en pause. <br></br>Cliquez sur le bouton ci-dessous pour passer en mode plein écran et continuer.<br></br>',
+    //   button_label: 'Continuer',
+    //   data: { trialtype: 'instr', label: 'fullscreen', block_nb: 0 },
+    // };
 
+    // Bienvenue
     var welcome = {
-        type: "html-keyboard-response",
-        stimulus: bienvenue,
-        data: { trialtype: 'instr', label: 'bienvenue', block_nb: 0 , stimulus: ''},
+      type: 'html-button-response',
+      stimulus: bienvenue,
+      choices: ['Commencer'],
+      data: { trialtype: 'instr', label: 'bienvenue', block_nb: 0 , stimulus: ''},
     };
-
+    
+    // Comité
     var comite = {
-        type: "html-keyboard-response",
-        stimulus: comitethique,
-        data: { trialtype: 'instr', label: 'comite', block_nb: 0 , stimulus: ''},
+      type: 'instructions',
+      pages: [
+        ethique_1,
+        ethique_2,
+        ethique_3,
+        ethique_4,
+        ethique_5,
+        ethique_6
+      ],
+      show_clickable_nav: true,
+      data: { trialtype: 'inst', label: 'comite', block_nb: 0 , stimulus: '', view_history: ''},
+      button_label_previous: 'Précédent',
+      button_label_next: 'Suivant',
     };
 
-    var instru = {
-        type: "html-keyboard-response",
-        stimulus: instructions,
-        data: { trialtype: 'instr', label: 'instruction', block_nb: 0 , stimulus: ''},
-    }
+    // Instructions générales
+    var instr_experiment = {
+      type: 'instructions',
+      pages: [
+        time,
+        expe_rules,
+      ],
+      show_clickable_nav: true,
+      data: { trialtype: 'instr', label: 'instruction', block_nb: 0 , stimulus: '', view_history: ''},
+      button_label_previous: 'Précédent',
+      button_label_next: 'Suivant',
+    };
 
-    var pract_instru = {
-        type: "html-keyboard-response",
-        stimulus: instru_practice,
-        data: { trialtype: 'instr', label: 'instruction', block_nb: 0 , stimulus: ''},
+    // Push dans la timeline
+    // timeline.push(welcome);
+    // timeline.push(instr_experiment);
+    // timeline.push(comite);
+    
+    // timeline.push(fullscreen);
+
+    // Instructions
+    var instru = {
+      type: 'instructions',
+      pages: [
+        instructions,
+        instructions_1,
+        instru_practice
+      ],
+      show_clickable_nav: true,
+      data: { trialtype: 'instr', label: 'instruction', block_nb: 0 , stimulus: '', view_history: ''},
+      button_label_previous: 'Précédent',
+      button_label_next: 'Suivant',
     }
 
     // Push dans la timeline
-    // timeline.push(fullscreen);
-    timeline.push(welcome);
-    // timeline.push(formulaire);
-    timeline.push(comite);
-    timeline.push(instru);
-    timeline.push(pract_instru);
+    // timeline.push(instru);
 
     // Parametres
     var practice = 1;
-    var numPrac  = 5;
-    var numTrials = 5;
+    var numPrac  = 1;
+    var numTrials = 4;
     var numBlocks = 1;
+
+    // var practice = 1;
+    // var numPrac  = 10;
+    // var numTrials = 292;
+    // var numBlocks = 1;
+
 
     var subject_id = Math.floor(Math.random() * 9000000) + 1000000;
     var langue = 'fr';
 
     // End screen
     var end_screen = {
-        type: "html-keyboard-response",
-        stimulus: end_task,
-        data: { trialtype: 'instr', label: 'end_task', block_nb: 0 , stimulus: ''},
-    }
+      type: 'html-button-response',
+      stimulus: end_task,
+      choices: ['Terminer'],
+      data: { trialtype: 'instr', label: 'end_task', block_nb: 0 , stimulus: ''},
+    };
 
     // Experiment
     var choice_task_v1 = choice_task(practice, numPrac, numBlocks, numTrials);
 
     for (var j = 0; j < choice_task_v1.length; j++) {
-        timeline.push(choice_task_v1[j]);
-        };
+        // timeline.push(choice_task_v1[j]);
+    };
+
+     // Formulaire
+     var form_task_v1 = form_task(practice);
+
+    for (var j = 0; j < form_task_v1.length; j++) {
+        // timeline.push(form_task_v1[j]);
+    };
+
+     // Panas
+     var panas_task_v1 = panas_task(practice);
+
+    for (var j = 0; j < panas_task_v1.length; j++) {
+        timeline.push(panas_task_v1[j]);
+    };
+
 
     timeline.push(end_screen);
 
@@ -102,8 +165,9 @@
             },
             on_finish: function() {
               // jsPsych.data.displayData('csv');
-              jsPsych.data.get().localSave('csv','mydata.csv');
-              console.log(jsPsych.data.get().json());
+              jsPsych.data.get().localSave('csv','test.csv');
+              var data = jsPsych.data.get().json();
+              console.log(data);
             }
     });
 

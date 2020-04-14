@@ -158,8 +158,10 @@ jsPsych.plugins["html-button-response"] = (function() {
       var trial_data = {
         "rt": response.rt,
         "stimulus": trial.stimulus,
-        "button_pressed": response.button
+        "key_press": response.button
       };
+
+      // button_pressed
 
       // clear the display
       display_element.innerHTML = '';

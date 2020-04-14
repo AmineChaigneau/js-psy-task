@@ -1,8 +1,17 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 .keyboard-container-stim {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: row;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .keyboard-stim {
@@ -23,10 +32,248 @@
 
 .keyboard-container-choice {
     position: fixed;
-    top: 0px;
+    bottom: 0px;
     left: 0px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.button-choice-break {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #333;
+    background-color: #EAEAE7;
+    border-color: #ccc;
+    padding: 1em;
+    margin: 10px;
+    font-size: 1.2em;
+    outline: none;
+}
+
+.button-choice-response {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #333;
+    background-color: #EAEAE7;
+    border-color: #ccc;
+    padding: 1em;
+    margin: 10px;
+    font-size: 1.5em;
+    outline: none;
+    min-width: 200px;
+}
+
+.text-instr {
+    font-size: 1.5em;
+}
+
+
+/* Input */
+
+.jspsych-survey-multi-select-option {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+}
+
+select {
+    border: solid 1px #C7C5C5; 
+    padding: 10px;
+    min-width: 200px;
+    margin: 10px;
+}
+
+#jspsych-survey-html-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+#jspsych-survey-likert-form {
+    width: 95vw;
+}
+
+.part {
+    padding: 10px;
+    border: solid 1px #C7C5C5;
+    color: #D61F1F;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+#jspsych-survey-likert-next {
+    margin-bottom: 15px;
+}
+
+.jspsych-survey-likert-preamble {
+    margin-top: 20px;
+}
+
+#jspsych-survey-multi-select-next {
+    margin-bottom: 15px;
+}
+
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
+
+.jspsych-select{
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Open Sans', 'Arial', sans-serif;
+    cursor: pointer;
+    line-height: 1.4;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    margin-top: 30px;
+  }
+  
+  .jspsych-select:hover {
+    background-color: #ddd;
+    border-color: #aaa;
+  }
+
+.selectapperance {
+    -moz-appearance: none;
+         appearance: none;
+    -webkit-appearance: none;
+    border-color: transparent;
+    background: none;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.selectapperance:hover {
+    background-color: #ddd;
+    border-color: #aaa;
+    border-color: transparent;
+}
+
+.btn-apperance {
+    -moz-appearance: none;
+         appearance: none;
+    -webkit-appearance: none;
+    border-color: transparent;
+    background: none;
+    outline: none;
+    margin: 0px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Open Sans', 'Arial', sans-serif;
+}
+
+.jspsych-btn-input {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+    line-height: 1.4;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    margin-top: 30px;
+}
+
+.jspsych-text-input {
+    padding: 10px;
+    border: solid 1px #C7C5C5;
+    display: inline-block;
+    margin: 0px;
+    cursor: pointer;
+    line-height: 1.4;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    margin-top: 30px;
+}
+
+
+input[type='text'] {
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-appearance: none;
+    border-color: transparent;
+    background: none;
+    outline: none;
+    margin: 0px;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Open Sans', 'Arial', sans-serif;
+}
+
+
+input[type='radio'] {
+    padding: 10px;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: solid 1px #C7C5C5;
+}
+
+input[type='checkbox'] {
+    padding: 10px;
+    width: 50px;
+    height: 35px;
+}
+
+.prompt-multi-select {
+    font-size: 24px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.jspsych-survey-multi-select-text {
+    font-size: 17px;
+    margin: 5px;
     width: 100%;
     display: flex;
     flex-flow: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }

@@ -57,7 +57,7 @@ jsPsych.plugins['survey-html-form'] = (function() {
     html += trial.html;
 
     // add submit button
-    html += '<input type="submit" id="jspsych-survey-html-form-next" class="jspsych-btn jspsych-survey-html-form" value="'+trial.button_label+'"></input>';
+    html += '<div class="jspsych-btn-input"><input type="submit" id="jspsych-survey-html-form-next" class="btn-apperance" value="'+trial.button_label+'"></input></div>';
 
     html += '</form>'
     display_element.innerHTML = html;

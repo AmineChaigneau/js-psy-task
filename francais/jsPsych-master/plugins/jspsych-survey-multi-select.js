@@ -91,7 +91,7 @@ jsPsych.plugins['survey-multi-select'] = (function() {
       ".jspsych-survey-multi-select-text span.required {color: darkred;}"+
       ".jspsych-survey-multi-select-horizontal .jspsych-survey-multi-select-text {  text-align: center;}"+
       ".jspsych-survey-multi-select-option { line-height: 2; }"+
-      ".jspsych-survey-multi-select-horizontal .jspsych-survey-multi-select-option {  display: inline-block;  margin-left: 1em;  margin-right: 1em;  vertical-align: top;}"+
+      ".jspsych-survey-multi-select-horizontal .jspsych-survey-multi-select-option {  display: flex; flex-flow: row;  margin-left: 1em;  margin-right: 1em;  vertical-align: top;}"+
       "label.jspsych-survey-multi-select-text input[type='checkbox'] {margin-right: 1em;}"
     display_element.innerHTML = '<style id="jspsych-survey-multi-select-css">' + cssstr + '</style>';
     
@@ -128,7 +128,7 @@ jsPsych.plugins['survey-multi-select'] = (function() {
       var question_selector = _join(plugin_id_selector, question_id);
 
       // add question text
-      display_element.querySelector(question_selector).innerHTML += '<p id="survey-question" class="' + plugin_id_name + '-text survey-multi-select">' + question.prompt + '</p>';
+      display_element.querySelector(question_selector).innerHTML += '<p id="survey-question" class="prompt-multi-select">' + question.prompt + '</p>';
 
       // create option check boxes
       for (var j = 0; j < question.options.length; j++) {
@@ -158,7 +158,7 @@ jsPsych.plugins['survey-multi-select'] = (function() {
     }
     // add submit button
     trial_form.innerHTML += '<div class="fail-message"></div>'
-    trial_form.innerHTML += '<button id="'+plugin_id_name+'-next" class="'+plugin_id_name+' jspsych-btn">'+trial.button_label+'</button>';
+    trial_form.innerHTML += '<button id="'+plugin_id_name+'-next" class="jspsych-btn">'+trial.button_label+'</button>';
 
     // validation check on the data first for custom validation handling
     // then submit the form

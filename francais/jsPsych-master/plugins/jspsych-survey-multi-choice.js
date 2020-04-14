@@ -86,7 +86,7 @@ jsPsych.plugins['survey-multi-choice'] = (function() {
       ".jspsych-survey-multi-choice-horizontal .jspsych-survey-multi-choice-text {  text-align: center;}"+
       ".jspsych-survey-multi-choice-option { line-height: 2; }"+
       ".jspsych-survey-multi-choice-horizontal .jspsych-survey-multi-choice-option {  display: inline-block;  margin-left: 1em;  margin-right: 1em;  vertical-align: top;}"+
-      "label.jspsych-survey-multi-choice-text input[type='radio'] {margin-right: 1em;}";
+      "label.jspsych-survey-multi-choice-text input[type='radio'] {margin-right: 1em; }";
     html += '</style>';
 
     // show preamble text
@@ -149,7 +149,7 @@ jsPsych.plugins['survey-multi-choice'] = (function() {
     }
     
     // add submit button
-    html += '<input type="submit" id="'+plugin_id_name+'-next" class="'+plugin_id_name+' jspsych-btn"' + (trial.button_label ? ' value="'+trial.button_label + '"': '') + '></input>';
+    html += '<input type="submit" id="'+plugin_id_name+'-next" class="jspsych-btn"' + (trial.button_label ? ' value="'+trial.button_label + '"': '') + '></input>';
     html += '</form>';
 
     // render

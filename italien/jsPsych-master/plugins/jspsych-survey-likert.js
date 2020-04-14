@@ -89,7 +89,7 @@ jsPsych.plugins['survey-likert'] = (function() {
     html += ".jspsych-survey-likert-statement { display:block; font-size: 16px; padding-top: 40px; margin-bottom:10px; }"+
       ".jspsych-survey-likert-opts { list-style:none; width:"+w+"; margin:auto; padding:0 0 35px; display:block; font-size: 14px; line-height:1.1em; }"+
       ".jspsych-survey-likert-opt-label { line-height: 1.1em; color: #444; }"+
-      ".jspsych-survey-likert-opts:before { content: ''; position:relative; top:11px; /*left:9.5%;*/ display:block; background-color:#efefef; height:4px; width:100%; }"+
+      ".jspsych-survey-likert-opts:before { content: ''; position:relative; top:15px; /*left:0;*/ display:block; background-color:#efefef; height:4px; width:100%; }"+
       ".jspsych-survey-likert-opts:last-of-type { border-bottom: 0; }"+
       ".jspsych-survey-likert-opts li { display:inline-block; /*width:19%;*/ text-align:center; vertical-align: top; }"+
       ".jspsych-survey-likert-opts li input[type=radio] { display:block; position:relative; top:0; left:50%; margin-left:-6px; }"
@@ -120,7 +120,7 @@ jsPsych.plugins['survey-likert'] = (function() {
       var width = 100 / question.labels.length;
       var options_string = '<ul class="jspsych-survey-likert-opts" data-name="'+question.name+'" data-radio-group="Q' + question_order[i] + '">';
       for (var j = 0; j < question.labels.length; j++) {
-        options_string += '<li style="width:' + width + '%"><input type="radio" name="Q' + question_order[i] + '" value="' + j + '"';
+        options_string += '<li style="width:' + width + '%"><input required type="radio" name="Q' + question_order[i] + '" value="' + j + '"';
         if(question.required){
           options_string += ' required';
         }
@@ -131,7 +131,7 @@ jsPsych.plugins['survey-likert'] = (function() {
     }
 
     // add submit button
-    html += '<input type="submit" id="jspsych-survey-likert-next" class="jspsych-survey-likert jspsych-btn" value="'+trial.button_label+'"></input>';
+    html += '<input type="submit" id="jspsych-survey-likert-next" class="jspsych-btn" value="'+trial.button_label+'"></input>';
 
     html += '</form>'
 
