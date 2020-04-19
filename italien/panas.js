@@ -212,7 +212,7 @@ function panas_task(practice) {
         var practchunk= {
             chunk_type:'linear',
             // timeline: [panas_instr, panas_1, panas_2, panas_3, panas_4]
-            timeline: [maia_instr, maia_1, maia_2, maia_3, maia_4, maia_5, maia_6, maia_7, panas_instr, panas_1, panas_2, panas_3, panas_4]
+            timeline: [panas_instr, panas_1, panas_2, panas_3, panas_4, maia_instr, maia_1, maia_2, maia_3, maia_4, maia_5, maia_6, maia_7]
         };
 
         panas.push(practchunk);

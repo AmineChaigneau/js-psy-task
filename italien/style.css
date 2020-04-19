@@ -1,5 +1,7 @@
 /* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
 
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 .keyboard-container-stim {
     width: 100%;
     display: -webkit-box;
@@ -32,7 +34,8 @@
 
 .keyboard-container-choice {
     position: fixed;
-    bottom: 0px;
+    /* bottom: 0px; */
+    top: 0px;
     left: 0px;
     width: 100%;
     display: -webkit-box;
@@ -67,7 +70,7 @@
     border-color: #ccc;
     padding: 1em;
     margin: 10px;
-    font-size: 1.5em;
+    font-size: 25px;
     outline: none;
     min-width: 200px;
 }
@@ -112,19 +115,7 @@ select {
 }
 
 #jspsych-survey-likert-form {
-    width: 95vw;
-}
-
-.part {
-    padding: 10px;
-    border: solid 1px #C7C5C5;
-    color: #D61F1F;
-    text-transform: uppercase;
-    margin-top: 5px;
-}
-
-#jspsych-survey-likert-next {
-    margin-bottom: 15px;
+    width: 100vw;
 }
 
 .jspsych-survey-likert-preamble {
@@ -190,7 +181,7 @@ select {
     outline: none;
     margin: 0px;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
     font-family: 'Open Sans', 'Arial', sans-serif;
 }
@@ -210,11 +201,12 @@ select {
     color: #333;
     background-color: #fff;
     border-color: #ccc;
-    margin-top: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .jspsych-text-input {
-    padding: 10px;
+    padding: 5px;
     border: solid 1px #C7C5C5;
     display: inline-block;
     margin: 0px;
@@ -263,17 +255,115 @@ input[type='checkbox'] {
 }
 
 .prompt-multi-select {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 10px;
     width: 100%;
 }
 
 .jspsych-survey-multi-select-text {
-    font-size: 17px;
+    font-size: 15px;
     margin: 5px;
-    width: 100%;
+    /* width: 100%; */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
 }
+
+
+.text-container {
+    width: 95vw;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    font-size: 20px;
+}
+
+.text-container-1{
+    width: 95vw;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    font-size: 15px;
+}
+
+.text-preamble-form {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.text-container-image {
+    width: 95vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 20px;
+}
+
+.jspsych-survey-text-question {
+    font-size: 20px;
+}
+
+img {
+    border: solid 3px red;
+    border-radius: 5px;
+}
+
+.part {
+    width: 200px;
+    padding: 10px;
+    border: solid 1px #C3C3C3;
+    border-radius: 10px;
+    background: #C7C5C5;
+    text-transform: uppercase;
+    margin-top: 20px;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.descript {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.intro-img {
+    border: none;
+    height: 75vh;
+    width: 90vw;
+}
+
+.instr-img {
+    margin-top: 20px;
+    height: 100px;
+    width: 160px;
+}
+
+@media (min-width: 400px) {
+    .intro-img{
+        width: 55vw;
+    }
+}
+/*
+.jspsych-survey-likert-statement {
+    font-size: 17px;
+}
+
+
+.jspsych-survey-likert-opt-label {
+    font-size: 13px;
+}*/

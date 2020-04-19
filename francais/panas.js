@@ -4,21 +4,21 @@ function panas_task(practice) {
 
     if (practice != 0) {
 
-        var scale = [
-          "Jamais", 
-          "Un peu", 
-          "Modérément", 
-          "Assez souvent", 
-          "Toujours"
-        ];
+      var scale = [
+        "Jamais", 
+        "Un peu", 
+        "Modérément", 
+        "Assez souvent", 
+        "Toujours"
+      ];
 
-        var scale_2 = [
-          "Jamais", 
-          "  ", 
-          "  ", 
-          "  ", 
-          "Toujours"
-        ];
+      var scale_2 = [
+        "Jamais - 1", 
+        "2", 
+        "3", 
+        "4", 
+        "5 - Toujours"
+      ];
 
         // MAIA
         var maia_instr = {
@@ -207,11 +207,13 @@ function panas_task(practice) {
             data: { trialtype: 'panas', label: 'panas_2c', block_nb: 3 , stimulus: ''},
         };
    
+   
         // Push dans la timeline 
 
         var practchunk= {
             chunk_type:'linear',
-            timeline: [maia_instr, maia_1, maia_2, maia_3, maia_4, maia_5, maia_6, maia_7, panas_instr, panas_1, panas_2, panas_3, panas_4]
+            // timeline: [panas_instr, panas_1, panas_2, panas_3, panas_4]
+            timeline: [panas_instr, panas_1, panas_2, panas_3, panas_4, maia_instr, maia_1, maia_2, maia_3, maia_4, maia_5, maia_6, maia_7]
         };
 
         panas.push(practchunk);

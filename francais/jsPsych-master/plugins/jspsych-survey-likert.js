@@ -115,7 +115,7 @@ jsPsych.plugins['survey-likert'] = (function() {
     for (var i = 0; i < trial.questions.length; i++) {
       var question = trial.questions[question_order[i]];
       // add question
-      html += '<label class="jspsych-survey-likert-statement">' + question.prompt + '</label>';
+      html += '<div class="jspsych-survey-likert-statement">' + question.prompt + '</div>';
       // add options
       var width = 100 / question.labels.length;
       var options_string = '<ul class="jspsych-survey-likert-opts" data-name="'+question.name+'" data-radio-group="Q' + question_order[i] + '">';
@@ -124,14 +124,14 @@ jsPsych.plugins['survey-likert'] = (function() {
         if(question.required){
           options_string += ' required';
         }
-        options_string += '><label class="jspsych-survey-likert-opt-label">' + question.labels[j] + '</label></li>';
+        options_string += '><div class="jspsych-survey-likert-opt-label">' + question.labels[j] + '</div></li>';
       }
       options_string += '</ul>';
       html += options_string;
     }
 
     // add submit button
-    html += '<input type="submit" id="jspsych-survey-likert-next" class="jspsych-btn" value="'+trial.button_label+'"></input>';
+    html += '<div class="jspsych-btn-input"><input type="submit" id="jspsych-survey-likert-next" class="btn-apperance" value="'+trial.button_label+'"></input></div>';
 
     html += '</form>'
 

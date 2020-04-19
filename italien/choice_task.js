@@ -8,17 +8,17 @@ function choice_task(practice, numPrac, numBlocks, numTrials) {
 
             var trial = choice_btn[i]
 
-            var pract_break = {
-                type: 'html-button-response',
-                stimulus: next,
-                choices: ['Continuer'],
-                data: { stimulus: '', key_press: '', trialtype: 'instr', label: 'bienvenue', block_nb: 0 },
-              };
+            // var pract_break = {
+            //     type: 'html-button-response',
+            //     stimulus: next,
+            //     choices: ['Continua'],
+            //     data: { stimulus: '', key_press: '', trialtype: 'instr', label: 'bienvenue', block_nb: 0 },
+            //   };
 
 
             var pract_trial = {
                 type: 'button-choice',
-                prompt: "<p style='font-size: 2em; margin-top: -50px'>" + trial.stimulus + "</p> <p style='font-size: 0.8em; line-height: 1em;'>Fare clic sul pulsante sinistro o destro per selezionare una risposta</p>",
+                prompt: "<p style='font-size: 35px; margin-top: 50px'>" + trial.stimulus + "</p> <p style='font-size: 0.6em; line-height: 1em;'>Fare clic sul pulsante sinistro o destro per selezionare una risposta</p>",
                 choices: trial.choices,
                 data: { stimulus: '', trialtype: 'practice', label: 'practice_trial', block_nb: 0, code: trial.code, resp_1: trial.choices[0], resp_2: trial.choices[1] },
                 on_finish: function(data) {
@@ -35,8 +35,8 @@ function choice_task(practice, numPrac, numBlocks, numTrials) {
 
             var practchunk= {
                 chunk_type:'linear',
-                // timeline: [pract_stim, pract_trial]
-                timeline: [pract_break, pract_trial]
+                // timeline: [pract_break, pract_trial]
+                timeline: [pract_trial]
             };
         
             experiment.push(practchunk);	
@@ -46,14 +46,14 @@ function choice_task(practice, numPrac, numBlocks, numTrials) {
     var task_begin = {
         type: 'html-button-response',
         stimulus: begin_tasks,
-        choices: ['Continuer'],
+        choices: ['Continua'],
         data: { trialtype: 'task', label: 'task_begin', block_nb: 1, stimulus: '' },
       };
 
     var task_break = {
         type: 'html-button-response',
         stimulus: break_tasks,
-        choices: ['Continuer'],
+        choices: ['Continua'],
         data: { trialtype: 'task', label: 'task_block_break', block_nb: 1, stimulus: '' },
       };
 
@@ -77,17 +77,17 @@ function choice_task(practice, numPrac, numBlocks, numTrials) {
             // var trial = choice_btn[i]
             // console.log(trial)
 
-            var pract_break = {
-                type: 'html-button-response',
-                stimulus: next,
-                choices: ['Continuer'],
-                data: { stimulus: '', key_press: '', trialtype: 'task', label: 'task_break', block_nb: 1 },
-            };
+            // var pract_break = {
+            //     type: 'html-button-response',
+            //     stimulus: next,
+            //     choices: ['Continua'],
+            //     data: { stimulus: '', key_press: '', trialtype: 'task', label: 'task_break', block_nb: 1 },
+            // };
 
 
             var pract_trial = {
                 type: 'button-choice',
-                prompt: "<p style='font-size: 2em; margin-top: -50px'>" + trial.stimulus + "</p>",
+                prompt: "<p style='font-size: 35px; margin-top: 50px'>" + trial.stimulus + "</p>",
                 choices: trial.choices,
                 data: { stimulus: '', trialtype: 'task', label: 'task_trial', block_nb: 1, code: trial.code, resp_1: trial.choices[0], resp_2: trial.choices[1] },
                 on_finish: function(data) {
@@ -103,8 +103,8 @@ function choice_task(practice, numPrac, numBlocks, numTrials) {
     
             var practchunk= {
                 chunk_type:'linear',
-                // timeline: [pract_stim, pract_trial]
-                timeline: [pract_break, pract_trial]
+                // timeline: [pract_break, pract_trial]
+                timeline: [pract_trial]
             };
         
             experiment.push(practchunk);	

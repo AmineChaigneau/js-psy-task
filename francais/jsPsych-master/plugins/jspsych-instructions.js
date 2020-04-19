@@ -109,7 +109,7 @@ jsPsych.plugins.instructions = (function() {
      
       if (trial.show_clickable_nav) {
 
-        var nav_html = "<div class='jspsych-instructions-nav' style='padding: 10px 0px;'>";
+        var nav_html = "<div class='jspsych-instructions-nav' style='padding: 0px;'>";
         if (trial.allow_backward) {
           var allowed = (current_page > 0 )? '' : "disabled='disabled'";
           nav_html += "<button id='jspsych-instructions-back' class='jspsych-btn' style='margin-right: 5px;' "+allowed+">&lt; "+trial.button_label_previous+"</button>";
